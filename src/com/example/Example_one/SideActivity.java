@@ -55,6 +55,10 @@ public class SideActivity extends Activity implements View.OnClickListener {
             EditText name = (EditText) findViewById(R.id.name);
             EditText project = (EditText) findViewById(R.id.project);
 
+            if(quote.getText().toString().length() < 1  || name.getText().toString().length() < 1 || project.getText().toString().length() < 1){
+                Toast.makeText(getApplicationContext(), "Please enter all the details", Toast.LENGTH_SHORT).show();
+            } else {
+
             postData(quote.getText().toString(), name.getText().toString(), project.getText().toString());
 
             Toast.makeText(getApplicationContext(), "Quote saved", Toast.LENGTH_SHORT).show();
@@ -62,6 +66,11 @@ public class SideActivity extends Activity implements View.OnClickListener {
             quote.setText("");
             name.setText("");
             project.setText("");
+
+            Intent i = new Intent(getApplicationContext(),MyActivity.class);
+            startActivity(i);
+            setContentView(R.layout.main);
+            }
         }
 
         public void postData(String quote, String name, String project) {

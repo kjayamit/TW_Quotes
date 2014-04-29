@@ -21,7 +21,8 @@
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Hello World, MyActivity"
+                android:text="Quotes"
+                android:textSize="30sp"
                 android:id="@+id/textView"/>
         <EditText
                 android:layout_width="132dp"

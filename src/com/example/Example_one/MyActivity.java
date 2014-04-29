@@ -18,6 +18,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.Resources.NothingSelectedSpinnerAdapter;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -61,11 +62,23 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
 
         spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String>adapter = new ArrayAdapter<String> (this,
-                android.R.layout.simple_spinner_item,listList);
-
+                R.layout.spinner_layout,listList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinner.setPrompt("Select Project");
+
+        spinner.setAdapter(
+                new NothingSelectedSpinnerAdapter(
+                        adapter,
+                        R.layout.spinner_layout,
+                        this));
         spinner.setOnItemSelectedListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();    //To change body of overridden methods use File | Settings | File Templates.
+        String response = recentQuotes();
+        DisplayResponse(response);
     }
 
     @Override
@@ -91,11 +104,13 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
 
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
 
+        if(position > 0) {
         LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
         mainView.removeAllViewsInLayout();
         String projectName = (String) spinner.getSelectedItem();
         String response = quotesByProject(projectName);
         DisplayResponse(response);
+        }
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
@@ -188,7 +203,7 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
         try {
             JSONArray responseArray = new JSONArray(response);
-            for (int i = 0; i < response.length(); i++) {
+            for (int i = 0; i < responseArray.length(); i++) {
                 JSONObject jsonObject = responseArray.getJSONObject(i);
                 TextView text2 = new TextView(getApplicationContext());
                 text2.setText(jsonObject.getString("quote") + " by " + jsonObject.getString("by_name"));
