@@ -5,13 +5,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
 
+    <EditText
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:hint="Quote"
+            android:id="@+id/quote" android:layout_gravity="left|center_vertical"
+            android:layout_alignRight="@+id/quote" android:layout_alignParentTop="true"
+            android:layout_marginTop="77dp"
+            />
+
+    <EditText
+            android:layout_width="132dp"
+            android:layout_height="45dp"
+            android:hint="Name"
+            android:id="@+id/name" android:layout_gravity="left|center_vertical"
+            android:layout_alignLeft="@+id/quote" android:layout_below="@+id/quote"/>
+
+    <EditText
+            android:layout_width="132dp"
+            android:layout_height="45dp"
+            android:hint="Project"
+            android:id="@+id/project" android:layout_gravity="left|center_vertical"
+            android:layout_alignLeft="@+id/quote" android:layout_below="@+id/name"/>
+
 
     <Button
             android:layout_width="95dp"
             android:layout_height="wrap_content"
-            android:text="back"
-            android:id="@+id/back" android:layout_gravity="center"/>
-
-
+            android:text="Submit"
+            android:id="@+id/submit" android:layout_gravity="center"
+            android:layout_alignRight="@+id/quote" android:layout_below="@+id/project"/>
 
 </RelativeLayout>

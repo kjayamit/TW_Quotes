@@ -30,10 +30,10 @@
     <list default="true" id="078536cd-4671-45d6-8d6b-7ceea14663b4" name="Default" comment="" />
     <ignored path="Example one.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398427384289" ignored="false" />
-    <file path="/strings.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398417016646" ignored="false" />
-    <file path="/MyActivity.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398427857512" ignored="false" />
-    <file path="/fragment.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1392700852411" ignored="false" />
+    <file path="/main.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398764772069" ignored="false" />
+    <file path="/strings.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398686331041" ignored="false" />
+    <file path="/MyActivity.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398754949928" ignored="false" />
+    <file path="/fragment.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398678640054" ignored="false" />
     <file path="$PROJECT_DIR$/../TESCO/Automation/src/Test2.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1393925378794" ignored="false" />
     <file path="/Test2.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1393925362210" ignored="false" />
     <file path="$PROJECT_DIR$/../TESCO/Automation/src/GoogleSuggest.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1393927869744" ignored="false" />
@@ -44,11 +44,9 @@
     <file path="$PROJECT_DIR$/../AndroidJSONParsing/gen/info/androidhive/jsonparsing/Manifest.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1395126237404" ignored="false" />
     <file path="$PROJECT_DIR$/../AndroidJSONParsing/gen/info/androidhive/jsonparsing/BuildConfig.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1397824216960" ignored="false" />
     <file path="/row.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398170408738" ignored="false" />
-    <file path="/side.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398427369997" ignored="false" />
+    <file path="/side.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398679573781" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398428301655" ignored="false" />
-    <file path="/SideActivity.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398506787699" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/example/Example_one/Manifest.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398428315172" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/example/Example_one/BuildConfig.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398428323710" ignored="false" />
+    <file path="/SideActivity.java" changelist="078536cd-4671-45d6-8d6b-7ceea14663b4" time="1398679253494" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -100,6 +97,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -121,9 +119,10 @@
       <file leaf-file-name="SideActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Example_one/SideActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="53" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.0">
+            <state line="52" column="0" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2354#2369#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -131,11 +130,11 @@
       </file>
       <file leaf-file-name="side.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/side.xml">
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state line="12" column="66" selection-start="486" selection-end="486" vertical-scroll-proportion="-7.2">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="17" selection-start="1554" selection-end="1554" vertical-scroll-proportion="-6.0961537">
               <folding />
             </state>
           </provider>
@@ -144,7 +143,7 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Example_one/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="209" column="65" selection-start="8224" selection-end="8224" vertical-scroll-proportion="0.0">
+            <state line="57" column="30" selection-start="1801" selection-end="1801" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -156,7 +155,16 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="65" selection-start="299" selection-end="299" vertical-scroll-proportion="0.22167487">
+            <state line="38" column="16" selection-start="1477" selection-end="1477" vertical-scroll-proportion="0.6944444">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/menu/menu_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="40" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -165,7 +173,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="23" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
+            <state line="3" column="44" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -182,11 +190,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/res/layout/row.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/menu/menu_main.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/Example_one/SideActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/side.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/Example_one/MyActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/side.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/Example_one/SideActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
       </list>
     </option>
@@ -222,6 +231,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,79 +282,9 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable-xhdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Example one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,6 +310,9 @@
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.Example_one" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/drawable-xhdpi" />
     </key>
@@ -597,25 +541,25 @@
     <frame x="0" y="22" width="1440" height="804" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.7105263" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20373027" sideWeight="0.7105263" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.71198833" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20373027" sideWeight="0.71198833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39970502" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28947368" sideWeight="0.5021521" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2880117" sideWeight="0.5021521" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32798833" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36297375" sideWeight="0.8615495" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36270192" sideWeight="0.8615495" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.7105263" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28947368" sideWeight="0.4978479" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.71198833" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2880117" sideWeight="0.4978479" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -688,13 +632,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="35" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proguard-project.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -708,11 +645,6 @@
     <entry file="file://$PROJECT_DIR$/res/drawable-xhdpi/back.9.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/tools/android-sdk-macosx/platforms/android-19/android.jar!/android/R.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="568" column="32" selection-start="41049" selection-end="41049" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/tools/android-sdk-macosx/platforms/android-19/android.jar!/org/apache/http/impl/client/DefaultHttpClient.class">
@@ -739,13 +671,6 @@
         <state line="5" column="19" selection-start="171" selection-end="171" vertical-scroll-proportion="0.16519824" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/tools/android-sdk-macosx/sources/android-19/android/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4378" column="16" selection-start="169657" selection-end="169657" vertical-scroll-proportion="0.33186814">
@@ -760,29 +685,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Example_one/SideActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2354#2369#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/side.xml">
-      <provider selected="true" editor-type-id="android-designer">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state line="12" column="66" selection-start="486" selection-end="486" vertical-scroll-proportion="-7.2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="17" selection-start="1554" selection-end="1554" vertical-scroll-proportion="-6.0961537">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="44" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/menu/menu_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/tools/android-sdk-macosx/platforms/android-19/android.jar!/android/R.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="568" column="32" selection-start="41049" selection-end="41049" vertical-scroll-proportion="0.75816995">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Example_one/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="65" selection-start="8224" selection-end="8224" vertical-scroll-proportion="0.0">
+        <state line="57" column="30" selection-start="1801" selection-end="1801" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Example_one/SideActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="53" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,7 +738,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="65" selection-start="299" selection-end="299" vertical-scroll-proportion="0.22167487">
+        <state line="38" column="16" selection-start="1477" selection-end="1477" vertical-scroll-proportion="0.6944444">
           <folding />
         </state>
       </provider>

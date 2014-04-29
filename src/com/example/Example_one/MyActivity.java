@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
@@ -41,17 +43,10 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.main);
 
-//        RelativeLayout layoutLeft = (RelativeLayout) this.findViewById(R.id.left);
-//        ScrollView layoutRight = (ScrollView) this.findViewById(R.id.right);
-
-        Button button = (Button)findViewById(R.id.submit);
-        button.setOnClickListener(submitClickListener(this));
-
         StrictMode.ThreadPolicy policy = new StrictMode.
                 ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-//        LinearLayout mainView = (LinearLayout)findViewById(R.id.mainLinear);
         String projects = getProjects();
         try {
             JSONArray jsonArray = new JSONArray(projects);
@@ -73,7 +68,29 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         spinner.setOnItemSelectedListener(this);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_green:
+                Intent i = new Intent(getApplicationContext(),SideActivity.class);
+                startActivity(i);
+                setContentView(R.layout.side);
+                return true;
+            case R.id.menu_red:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+
         LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
         mainView.removeAllViewsInLayout();
         String projectName = (String) spinner.getSelectedItem();
@@ -183,36 +200,7 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
             e.printStackTrace();
         }
     }
-
-    private View.OnClickListener submitClickListener(final Context context) {
-
-
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
-//
-//                String recentQuotes = recentQuotes();
-//                try {
-//                    JSONArray jsonArray = new JSONArray(recentQuotes);
-//                    for (int i = 0; i < jsonArray.length(); i++) {
-//                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-//                        TextView text2 = new TextView(context);
-//                        text2.setText(jsonObject.getString("quote") + " by " + jsonObject.getString("by_name"));
-//                        text2.setBackgroundResource(R.drawable.back);
-//                        mainView.addView(text2);
-//                    }
-//                }
-//                catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-
-                Intent i = new Intent(getApplicationContext(),SideActivity.class);
-                startActivity(i);
-                setContentView(R.layout.side);
-            }
-        };
     }
 
 
-}
+//}
