@@ -3,35 +3,26 @@ package com.example.Example_one;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.example.Resources.NothingSelectedSpinnerAdapter;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import com.example.Resources.QuotesServiceAdapters;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 public class MyActivity extends Activity implements AdapterView.OnItemSelectedListener {
+    private final QuotesServiceAdapters quotesServiceAdapters = new QuotesServiceAdapters();
     /**
      * Called when the activity is first created.
      */
@@ -48,7 +39,7 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
                 ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        String projects = getProjects();
+        String projects = quotesServiceAdapters.getProjects();
         try {
             JSONArray jsonArray = new JSONArray(projects);
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -77,8 +68,11 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
     @Override
     protected void onStart() {
         super.onStart();    //To change body of overridden methods use File | Settings | File Templates.
-        String response = recentQuotes();
+        String response = quotesServiceAdapters.recentQuotes();
         DisplayResponse(response);
+
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
     @Override
@@ -108,7 +102,7 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
         mainView.removeAllViewsInLayout();
         String projectName = (String) spinner.getSelectedItem();
-        String response = quotesByProject(projectName);
+        String response = quotesServiceAdapters.quotesByProject(projectName);
         DisplayResponse(response);
         }
     }
@@ -118,87 +112,6 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
 
     }
 
-    public String getProjects() {
-        StringBuilder builder = new StringBuilder();
-        HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet("http://10.16.4.16:8765/projects_distinct");
-        try {
-            HttpResponse response = client.execute(httpGet);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if (statusCode == 200) {
-                HttpEntity entity = response.getEntity();
-                InputStream content = entity.getContent();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    builder.append(line);
-                }
-            } else {
-                Log.e(MyActivity.class.toString(), "Failed to download file");
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return builder.toString();
-    }
-
-    public String recentQuotes() {
-        StringBuilder builder = new StringBuilder();
-        HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet("http://10.16.4.16:8765/recent_10_quotes");
-        try {
-            HttpResponse response = client.execute(httpGet);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if (statusCode == 200) {
-                HttpEntity entity = response.getEntity();
-                InputStream content = entity.getContent();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    builder.append(line);
-                }
-            } else {
-                Log.e(MyActivity.class.toString(), "Failed to download file");
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return builder.toString();
-    }
-
-    public String quotesByProject(String projectName) {
-        StringBuilder builder = new StringBuilder();
-        HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet("http://10.16.4.16:8765/project/quotes?project=" + projectName);
-        try {
-            HttpResponse response = client.execute(httpGet);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if (statusCode == 200) {
-                HttpEntity entity = response.getEntity();
-                InputStream content = entity.getContent();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    builder.append(line);
-                }
-            } else {
-                Log.e(MyActivity.class.toString(), "Failed to download file");
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return builder.toString();
-    }
-
     public void DisplayResponse(String response) {
         LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
         try {
@@ -206,6 +119,8 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
             for (int i = 0; i < responseArray.length(); i++) {
                 JSONObject jsonObject = responseArray.getJSONObject(i);
                 TextView text2 = new TextView(getApplicationContext());
+//                text2.setTextColor(android.R.color.black);
+                text2.setTextColor(Color.rgb(139,137,137));
                 text2.setText(jsonObject.getString("quote") + " by " + jsonObject.getString("by_name"));
                 text2.setBackgroundResource(R.drawable.back);
                 mainView.addView(text2);
@@ -215,7 +130,6 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
             e.printStackTrace();
         }
     }
-    }
+}
 
 
-//}

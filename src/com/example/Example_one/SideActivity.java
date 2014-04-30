@@ -11,6 +11,7 @@ import android.app.Activity;
  */
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,10 +19,10 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.*;
+import com.example.Resources.QuotesServiceAdapters;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -30,6 +31,8 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,16 +41,48 @@ import java.util.List;
 public class SideActivity extends Activity implements View.OnClickListener {
 
         Button bt1;
+        List<String> listList = new ArrayList<String>();
+    private final QuotesServiceAdapters quotesServiceAdapters = new QuotesServiceAdapters();
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.side);
             bt1 = (Button) findViewById(R.id.submit);
             bt1.setOnClickListener(this);
+
+            String projects = quotesServiceAdapters.getProjects();
+            try {
+                JSONArray jsonArray = new JSONArray(projects);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    listList.add(jsonObject.getString("project"));
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            // Get a reference to the AutoCompleteTextView in the layout
+            AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.project);
+// Get the string array
+//            String[] countries = getResources().getStringArray(R.array.countries_array);
+// Create the adapter and set it to the AutoCompleteTextView
+//            ArrayAdapter<String> adapter =
+//                    new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
+            ArrayAdapter<String>adapter = new ArrayAdapter<String> (this,
+                    android.R.layout.simple_list_item_1,listList);
+            textView.setAdapter(adapter);
         }
 
+    @Override
+    protected void onStart() {
+        super.onStart();    //To change body of overridden methods use File | Settings | File Templates.
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+    }
 
-        @Override
+    @Override
         public void onClick(View v)
         {
 
