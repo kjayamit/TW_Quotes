@@ -2,14 +2,12 @@ package com.example.Example_one;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
+import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
@@ -63,6 +61,24 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
                         R.layout.spinner_layout,
                         this));
         spinner.setOnItemSelectedListener(this);
+
+        final EditText edittext = (EditText) findViewById(R.id.search);
+        edittext.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+//                    // Perform action on key press
+//                    Toast.makeText(getApplicationContext(), edittext.getText(), Toast.LENGTH_SHORT).show();
+                    LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
+                    mainView.removeAllViewsInLayout();
+                    String response = quotesServiceAdapters.searchFor(edittext.getText().toString());
+                    DisplayResponse(response);
+
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -99,6 +115,8 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
 
         if(position > 0) {
+            EditText edittext = (EditText) findViewById(R.id.search);
+            edittext.setText("");
         LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
         mainView.removeAllViewsInLayout();
         String projectName = (String) spinner.getSelectedItem();
@@ -119,11 +137,18 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
             for (int i = 0; i < responseArray.length(); i++) {
                 JSONObject jsonObject = responseArray.getJSONObject(i);
                 TextView text2 = new TextView(getApplicationContext());
-//                text2.setTextColor(android.R.color.black);
-                text2.setTextColor(Color.rgb(139,137,137));
+                text2.setTextColor(Color.rgb(128,255,0));
                 text2.setText(jsonObject.getString("quote") + " by " + jsonObject.getString("by_name"));
-                text2.setBackgroundResource(R.drawable.back);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.MATCH_PARENT);
+                text2.setLayoutParams(params);
+                text2.setBackgroundResource(R.drawable.brown_2);
+
                 mainView.addView(text2);
+
+                ImageView imgView = new ImageView(getApplicationContext());
+                imgView.setImageResource(R.drawable.elephant_icon);
+                imgView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+                mainView.addView(imgView);
             }
         }
         catch (Exception e) {
