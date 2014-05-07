@@ -10,10 +10,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.URLEncoder;
 
 public class QuotesServiceAdapters {
 
@@ -101,11 +99,11 @@ public class QuotesServiceAdapters {
         return builder.toString();
     }
 
-    public String searchFor(String search_param){
+    public String searchFor(String search_param) throws UnsupportedEncodingException {
 
         StringBuilder builder = new StringBuilder();
         HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet("http://10.16.4.16:8765/all_search?search_param=" + search_param);
+        HttpGet httpGet = new HttpGet("http://10.16.4.16:8765/all_search?search_param=" + URLEncoder.encode(search_param, "UTF-8"));
         try {
             HttpResponse response = client.execute(httpGet);
             StatusLine statusLine = response.getStatusLine();

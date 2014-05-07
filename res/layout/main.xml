@@ -30,9 +30,10 @@
                 android:layout_height="45dp"
                 android:hint="search"
                 android:id="@+id/search" android:layout_gravity="left|center_vertical"
-                android:inputType=""
+                android:inputType="textNoSuggestions|textUri"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
+                android:textCursorDrawable="@null"
                 android:drawableRight="@drawable/search_small" android:layout_alignRight="@+id/textView"
                 android:layout_alignTop="@+id/spinner" android:layout_alignBottom="@+id/spinner"/>
         <Spinner
@@ -41,7 +42,6 @@
                 android:layout_height="wrap_content" android:layout_alignLeft="@+id/textView"
                 android:layout_alignParentTop="true" android:layout_marginTop="63dp"
                 android:background="@android:drawable/btn_dropdown"
-
                 android:hint="@string/select"
                />
         <!--android:background="@color/red"-->

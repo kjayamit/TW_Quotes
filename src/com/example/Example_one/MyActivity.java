@@ -11,6 +11,7 @@ import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         }
 
         spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<String>adapter = new ArrayAdapter<String> (this,
+        final ArrayAdapter<String>adapter = new ArrayAdapter<String> (this,
                 R.layout.spinner_layout,listList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setPrompt("Select Project");
@@ -67,11 +68,21 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
-//                    // Perform action on key press
-//                    Toast.makeText(getApplicationContext(), edittext.getText(), Toast.LENGTH_SHORT).show();
                     LinearLayout mainView = (LinearLayout)findViewById(R.id.right);
-                    mainView.removeAllViewsInLayout();
-                    String response = quotesServiceAdapters.searchFor(edittext.getText().toString());
+                    mainView.removeAllViews();
+
+                    spinner.setAdapter(
+                            new NothingSelectedSpinnerAdapter(
+                                    adapter,
+                                    R.layout.spinner_layout,
+                                    MyActivity.this));
+
+                    String response = null;
+                    try {
+                        response = quotesServiceAdapters.searchFor(edittext.getText().toString().trim());
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                     DisplayResponse(response);
 
                     return true;
@@ -135,20 +146,29 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         try {
             JSONArray responseArray = new JSONArray(response);
             for (int i = 0; i < responseArray.length(); i++) {
-                JSONObject jsonObject = responseArray.getJSONObject(i);
-                TextView text2 = new TextView(getApplicationContext());
-                text2.setTextColor(Color.rgb(128,255,0));
-                text2.setText(jsonObject.getString("quote") + " by " + jsonObject.getString("by_name"));
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.MATCH_PARENT);
-                text2.setLayoutParams(params);
-                text2.setBackgroundResource(R.drawable.brown_2);
 
-                mainView.addView(text2);
+
+                RelativeLayout lLayout = new RelativeLayout(getApplicationContext());
 
                 ImageView imgView = new ImageView(getApplicationContext());
                 imgView.setImageResource(R.drawable.elephant_icon);
-                imgView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
-                mainView.addView(imgView);
+                RelativeLayout.LayoutParams params_2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+                params_2.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+                imgView.setLayoutParams(params_2);
+                lLayout.addView(imgView);
+
+
+                JSONObject jsonObject = responseArray.getJSONObject(i);
+                TextView text2 = new TextView(getApplicationContext());
+                text2.setTextColor(Color.rgb(128, 255, 0));
+                text2.setText(jsonObject.getString("quote") + " by " + jsonObject.getString("by_name"));
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                text2.setLayoutParams(params);
+                text2.setBackgroundResource(R.drawable.brown_2);
+                lLayout.addView(text2);
+
+                mainView.addView(lLayout);
             }
         }
         catch (Exception e) {
