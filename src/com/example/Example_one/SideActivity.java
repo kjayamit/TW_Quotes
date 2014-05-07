@@ -134,6 +134,10 @@ public class SideActivity extends Activity implements View.OnClickListener {
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
             getMenuInflater().inflate(R.menu.menu_main, menu);
+
+            MenuItem item = menu.findItem(R.id.menu_green);
+            item.setVisible(false);
+            this.invalidateOptionsMenu();
             return true;
         }
 

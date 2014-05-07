@@ -90,6 +90,8 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
                 return false;
             }
         });
+
+
     }
 
     @Override
@@ -105,6 +107,9 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem item = menu.findItem(R.id.menu_red);
+        item.setVisible(false);
+        this.invalidateOptionsMenu();
         return true;
     }
 
