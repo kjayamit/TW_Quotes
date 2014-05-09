@@ -11,16 +11,12 @@ import android.app.Activity;
  */
 
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import com.example.Resources.QuotesServiceAdapters;
 import org.apache.http.HttpResponse;
@@ -134,8 +130,7 @@ public class SideActivity extends Activity implements View.OnClickListener {
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
             getMenuInflater().inflate(R.menu.menu_main, menu);
-
-            MenuItem item = menu.findItem(R.id.menu_green);
+            MenuItem item = menu.findItem(R.id.add_quote);
             item.setVisible(false);
             this.invalidateOptionsMenu();
             return true;
@@ -147,9 +142,7 @@ public class SideActivity extends Activity implements View.OnClickListener {
 
         public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.menu_green:
-                    return true;
-                case R.id.menu_red:
+                case R.id.list_quote:
                     Intent i = new Intent(getApplicationContext(),MyActivity.class);
                     startActivity(i);
                     setContentView(R.layout.main);

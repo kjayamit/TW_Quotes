@@ -1,14 +1,16 @@
 package com.example.Example_one;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.text.Layout;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.AlignmentSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.*;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
 import java.io.UnsupportedEncodingException;
@@ -107,7 +109,7 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        MenuItem item = menu.findItem(R.id.menu_red);
+        MenuItem item = menu.findItem(R.id.list_quote);
         item.setVisible(false);
         this.invalidateOptionsMenu();
         return true;
@@ -116,12 +118,10 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_green:
+            case R.id.add_quote:
                 Intent i = new Intent(getApplicationContext(),SideActivity.class);
                 startActivity(i);
                 setContentView(R.layout.side);
-                return true;
-            case R.id.menu_red:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -160,21 +160,33 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
 
                 RelativeLayout lLayout = new RelativeLayout(getApplicationContext());
 
-                ImageView imgView = new ImageView(getApplicationContext());
-                imgView.setImageResource(R.drawable.elephant_icon);
-                RelativeLayout.LayoutParams params_2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
-                params_2.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-                imgView.setLayoutParams(params_2);
-                lLayout.addView(imgView);
+//                ImageView imgView = new ImageView(getApplicationContext());
+//                imgView.setImageResource(R.drawable.elephant_icon);
+//                RelativeLayout.LayoutParams params_2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                params_2.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+//                imgView.setLayoutParams(params_2);
+//                lLayout.addView(imgView);
 
 
                 JSONObject jsonObject = responseArray.getJSONObject(i);
                 TextView text2 = new TextView(getApplicationContext());
                 text2.setTextColor(Color.rgb(128, 255, 0));
-                text2.setText(jsonObject.getString("quote") + " by " + jsonObject.getString("by_name"));
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+                String firstPart= jsonObject.getString("quote");
+//                text2.setText(jsonObject.getString("quote") + "\n" + jsonObject.getString("by_name"));
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
                 params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 text2.setLayoutParams(params);
+                text2.setCompoundDrawablesWithIntrinsicBounds(
+                        R.drawable.elephant_icon, 0, 0, 0);
+
+                final String resultText = jsonObject.getString("by_name");
+                final String finalText = firstPart + "\n" + resultText ;
+                final SpannableString styledResultText = new SpannableString(finalText);
+                styledResultText.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE),
+                        resultText.length(), resultText.length() + firstPart.length(),
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                text2.setText(styledResultText);
+
                 text2.setBackgroundResource(R.drawable.brown_2);
                 lLayout.addView(text2);
 
