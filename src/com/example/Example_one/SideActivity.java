@@ -140,6 +140,10 @@ public class SideActivity extends Activity implements View.OnClickListener {
             this.invalidateOptionsMenu();
             return true;
         }
+        @Override
+        public void onBackPressed() {
+            Toast.makeText(getApplicationContext(), "Back disabled in App", Toast.LENGTH_SHORT).show();
+        }
 
         public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {

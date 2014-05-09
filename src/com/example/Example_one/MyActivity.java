@@ -141,6 +141,11 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "Back disabled in App", Toast.LENGTH_SHORT).show();
+    }
+
     public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
 
